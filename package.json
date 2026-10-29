@@ -1,0 +1,47 @@
+{
+  "name": "cube-timer",
+  "productName": "Cube Timer",
+  "version": "1.0.0",
+  "description": "A minimal speedcubing timer",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "local.cubetimer",
+    "productName": "Cube Timer",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "js/**/*",
+      "build/icon.png"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png"
+    },
+    "portable": {
+      "artifactName": "Cube-Timer.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.1.0",
+    "electron-builder": "^26.18.0"
+  },
+  "author": "BuiltByWestL",
+  "repository": "github:BuiltByWestL/cube-timer"
+}
